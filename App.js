@@ -1,21 +1,57 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import './firebaseConfig';
+
+import Login from './screens/login';
+import Cadastro from './screens/cadastro';
+import Home from './screens/home';
+import Detalhes from './screens/detalhes';
+import Perfil from './screens/perfil';
+import Favoritos from './screens/favoritos';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  return (
+
+    <NavigationContainer>
+
+      <Stack.Navigator>
+
+        <Stack.Screen
+          name="Login"
+          component={Login}
+        />
+
+        <Stack.Screen
+          name="Cadastro"
+          component={Cadastro}
+        />
+        <Stack.Screen
+  name="Home"
+  component={Home}
+/>
+
+<Stack.Screen
+  name="Detalhes"
+  component={Detalhes}
+/>
+<Stack.Screen
+  name="Perfil"
+  component={Perfil}
+/>
+<Stack.Screen
+  name="Favoritos"
+  component={Favoritos}
+/>
+
+      </Stack.Navigator>
+
+    </NavigationContainer>
+
+  );
+
+}
