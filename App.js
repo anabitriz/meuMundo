@@ -1,57 +1,31 @@
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from "@react-navigation/native";
 
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import './firebaseConfig';
+import "./firebaseConfig";
 
-import Login from './screens/login';
-import Cadastro from './screens/cadastro';
-import Home from './screens/home';
-import Detalhes from './screens/detalhes';
-import Perfil from './screens/perfil';
-import Favoritos from './screens/favoritos';
+import Login from "./screens/login";
+import Cadastro from "./screens/cadastro";
+import Home from "./screens/home";
+import Detalhes from "./screens/detalhes";
+import Perfil from "./screens/perfil";
+import Favoritos from "./screens/favoritos";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-
   return (
-
     <NavigationContainer>
-
       <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login} />
 
-        <Stack.Screen
-          name="Login"
-          component={Login}
-        />
+        <Stack.Screen name="Cadastro" component={Cadastro} />
+        <Stack.Screen name="Home" component={Home} />
 
-        <Stack.Screen
-          name="Cadastro"
-          component={Cadastro}
-        />
-        <Stack.Screen
-  name="Home"
-  component={Home}
-/>
-
-<Stack.Screen
-  name="Detalhes"
-  component={Detalhes}
-/>
-<Stack.Screen
-  name="Perfil"
-  component={Perfil}
-/>
-<Stack.Screen
-  name="Favoritos"
-  component={Favoritos}
-/>
-
+        <Stack.Screen name="Detalhes" component={Detalhes} />
+        <Stack.Screen name="Perfil" component={Perfil} />
+        <Stack.Screen name="Favoritos" component={Favoritos} />
       </Stack.Navigator>
-
     </NavigationContainer>
-
   );
-
 }
