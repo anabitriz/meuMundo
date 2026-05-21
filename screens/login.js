@@ -28,8 +28,6 @@ export default function Login({ navigation }) {
 
       .then((userCredential) => {
 
-        alert("Login realizado!");
-
         navigation.navigate("Home");
 
       })
